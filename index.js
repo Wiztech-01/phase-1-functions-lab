@@ -11,7 +11,7 @@ function distanceFromHqInFeet(capital) {
     return blocks * NoFeetPerBlock;
 }
 console.log(distanceFromHqInFeet);
-}
+
 
 function distanceTravelledInFeet(startBlock, endBlock) {
     const blocks = Math.abs(startBlock - endBlock);
