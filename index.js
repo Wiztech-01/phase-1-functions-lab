@@ -6,19 +6,33 @@ function distanceFromHqInBlocks(capital) {
 console.log(distanceFromHqInBlocks(43));
 
 function distanceFromHqInFeet(street) {
-    if(street<42) {
-        return(42 - street);
+  return distanceFromHqInBlocks(street) * 264
 }
 
-    else {
-         return(street - 42);
-    }
-console.log(distanceFromHqInFeet);
 
 
 function distanceTravelledInFeet(startBlock, endBlock) {
-    const blocks = Math.abs(startBlock - endBlock);
-    const feetPerBlock = 264;
-    return blocks * feetPerBlock;
+    // const blocks = Math.abs(startBlock - endBlock);
+    // const feetPerBlock = 264;
+    // return startBlock, endBlock;
+    if(startBlock>endBlock) {
+        return (startBlock-endBlock) * 264
+    }
+    return (endBlock-startBlock) * 264
 }
 
+function calculatesFarePrice(start , destination) {
+    let distance = distanceTravelledInFeet(start,destination);
+    if (distance<= 400){
+      return 0;
+    }
+    if (distance>=400 && distance<=2000){
+      return (distance-400)* 0.02;
+    }
+    else if(distance>=2000&& distance<=2500){
+      return 25;
+    }
+    else if (distance > 2500){
+      return "cannot travel that far";
+    }
+  }
