@@ -5,11 +5,14 @@ function distanceFromHqInBlocks(capital) {
 }
 console.log(distanceFromHqInBlocks(43));
 
-function distanceFromHqInFeet(capital) {
-    const headquarters = 42;
-    const NoFeetPerBlock = 264;
-    return blocks * NoFeetPerBlock;
+function distanceFromHqInFeet(street) {
+    if(street<42) {
+        return(42 - street);
 }
+
+    else {
+         return(street - 42);
+    }
 console.log(distanceFromHqInFeet);
 
 
@@ -19,18 +22,3 @@ function distanceTravelledInFeet(startBlock, endBlock) {
     return blocks * feetPerBlock;
 }
 
-function calculatesFarePrice(startBlock, endBlock) {
-    let distance = distanceTravelledInFeet(startBlock,endBlock);
-    if (distance<= 400){
-      return 0;
-    }
-    if (distance>=400 && distance<=2000){
-      return (distance-400)* 0.02;
-    }
-    else if(distance>=2000&& distance<=2500){
-      return 25;
-    }
-    else if (distance > 2500){
-      return "unable to travel";
-    }
-}
